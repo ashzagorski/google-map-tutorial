@@ -19,7 +19,7 @@ const RiverMap = withGoogleMap(props => (
                      lng={river.longitude}
                      description={river.description}
                      name={river.name}
-                     price={river.price} />
+                     fish={river.fish} />
       ))
     }
   </GoogleMap>
@@ -43,7 +43,7 @@ export class Map extends Component {
   }
 
   handleMapChanged() {
-    this.getMapBounds()
+    // this.getMapBounds()
     this.setMapCenterPoint()
     this.fetchRiversFromApi()
   }
@@ -76,17 +76,17 @@ export class Map extends Component {
       .then((response) => this.setState({ rivers: response }))
   }
 
-  getMapBounds() {
-    var mapBounds = this.map.getBounds()
-    var xMapBounds = mapBounds.b
-    var yMapBounds = mapBounds.f
+  // getMapBounds() {
+  //   var mapBounds = this.map.getBounds()
+  //   var xMapBounds = mapBounds.b
+  //   var yMapBounds = mapBounds.f
 
-    this.xMapBounds.min = xMapBounds.b
-    this.xMapBounds.max = xMapBounds.f
+  //   this.xMapBounds.min = xMapBounds.b
+  //   this.xMapBounds.max = xMapBounds.f
 
-    this.yMapBounds.min = yMapBounds.f
-    this.yMapBounds.max = yMapBounds.b
-  }
+  //   this.yMapBounds.min = yMapBounds.f
+  //   this.yMapBounds.max = yMapBounds.b
+  // }
 
   render() {
     const {lat, lng, rivers} = this.state

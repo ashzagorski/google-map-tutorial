@@ -3,11 +3,6 @@ import './App.css';
 import Map from './components/Map.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
-import Form from 'react-bootstrap/Form'
-import FormControl from 'react-bootstrap/FormControl'
-import Button from 'react-bootstrap/Button'
 
 
 
@@ -15,48 +10,76 @@ import Button from 'react-bootstrap/Button'
 
 
 class App extends Component {
+
+  componentDidMount = () => {
+    fetch(`http://localhost:4000/api/rivers`)
+      .then(res => res.json())
+      .then(data => {
+        this.setState({rivers: []})
+      })
+  }
   render() {
     return (
       <div className="App">
-        <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#home">Yama Fishing</Navbar.Brand>
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto">
-      <Nav.Link href="#home">Home</Nav.Link>
-      <Nav.Link href="#link">Link</Nav.Link>
-      <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-    </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form>
-  </Navbar.Collapse>
-</Navbar>
+        <nav className="navbar fixed-top navbar-light">
+          <a className="nav-link active" id="navLink" href="/">SIGN UP</a>
+          <ul className="nav justify-content-center">
+            <a className="navbar-brand" href="/">
+              <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="Yama Logo"/>
+              YAMA FISHING
+            </a>
+          </ul>
+          <ul className="nav justify-content-end">
+             <li className="nav-item">
+                <a className="nav-link active" id="navLink" href="/">SIGN IN</a>
+              </li>
+             <li className="nav-item">
+                <a className="nav-link" id="navLink" href="/">BLOG</a>
+              </li>
+            </ul>
+        </nav>
 
-        <Nav justify variant="tabs" defaultActiveKey="/home">
-  <Nav.Item>
-    <Nav.Link href="/home">Active</Nav.Link>
-  </Nav.Item>
-  <Nav.Item>
-    <Nav.Link eventKey="link-1">Loooonger NavLink</Nav.Link>
-  </Nav.Item>
-  <Nav.Item>
-    <Nav.Link eventKey="link-2">Link</Nav.Link>
-  </Nav.Item>
-  <Nav.Item>
-    <Nav.Link eventKey="disabled" disabled>
-      Disabled
-    </Nav.Link>
-  </Nav.Item>
-</Nav>
-<Map/>
+        <nav className="navbar navbar-light bg-light">
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+            <button className="btn btn-light btn-outline-secondary" type="submit">Search</button>
+          </form>
+          <li className="nav-item dropdown">
+        <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a className="dropdown-item" href="/">Action</a>
+          <a className="dropdown-item" href="/">Another action</a>
+          <a className="dropdown-item" href="/">Something else here</a>
+        </div>
+      </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Fish Type
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/">Action</a>
+               <a class="dropdown-item" href="/">Another action</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Class
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/">Action</a>
+               <a class="dropdown-item" href="/">Another action</a>
+              <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/">Something else here</a>
+            </div>
+          </li>
+      
+        </nav>
+
+        <Map/>
       </div>
     );
   }
