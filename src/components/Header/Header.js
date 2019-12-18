@@ -2,9 +2,7 @@ import React from 'react';
 import './Header.css';
 
 const Header = () => (
-  <div className="container-fluid">
     <div className="header">
-      <div className="row">
       <nav className="navbar navbar-light">
         <a className="nav-link active" id="navLink" href="/">SIGN UP</a>
             <ul className="nav justify-content-center">
@@ -23,8 +21,6 @@ const Header = () => (
             </ul>
         </nav>
       </div>
-    </div>
-  </div>
 );
 
 export default Header;

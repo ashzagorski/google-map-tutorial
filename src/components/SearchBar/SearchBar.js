@@ -3,9 +3,7 @@ import './SearchBar.css';
 
 
 const SearchBar = () => (
-    <div className="container-fluid">
       <div className="search-bar">
-        <div className="row">
             <nav className="navbar navbar-light bg-light">
             <form className="form-inline my-2 my-lg-0">
                 <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
@@ -42,8 +40,6 @@ const SearchBar = () => (
                 </div>
             </div>
             </nav>
-        </div>
-      </div>
     </div>
   );
   

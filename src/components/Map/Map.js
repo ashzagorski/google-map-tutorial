@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
-import { withGoogleMap, GoogleMap } from 'react-google-maps'
-import { RiverMarker } from './RiverMarker'
+import React, { Component } from 'react';
+import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import { RiverMarker } from '../RiverMarker';
+import './Map.css';
 
-const RiverMap = withGoogleMap(props => (
+
+export const RiverMap = withGoogleMap(props => (
   <GoogleMap
     ref={props.onMapMounted}
     onZoomChanged={props.handleMapChanged}
@@ -25,7 +27,7 @@ const RiverMap = withGoogleMap(props => (
   </GoogleMap>
 ));
 
-export class Map extends Component {
+class Map extends Component {
   constructor(props) {
     super(props)
 

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Map from './components/Map.js'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
 import SearchBar from './components/SearchBar/SearchBar';
+import Map from './components/Map/Map';
+
 
 
 
@@ -20,25 +21,19 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="homepage container-fluid ">
-      <div className="row">
+      <div className="homepage">
         <div className="header">
           <Header/>
         </div>
-      </div>
-      <div className="row">
         <div className="homepageContent">
-          <div className="row">
             <SearchBar />
-          </div>
-          <div className="row suggestions">
-            <div className="col-12">
+        </div>
+        <div className="row suggestions">
+          <div className="col-12">
              <Map/>
-            </div>
           </div>
         </div>
       </div>
-    </div>
     );
   }
 }
