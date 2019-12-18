@@ -39,8 +39,8 @@ class Map extends Component {
 
     this.state = {
       rivers: [],
-      lat: 50.0515918,
-      lng: 19.9357531
+      lat: 44.899726,
+      lng: -89.72133
     };
   }
 

@@ -10,7 +10,7 @@ const SearchBar = () => (
                 <button className="btn btn-light btn-outline-secondary" type="submit">Search</button>
             </form>
             <div className="dropdown">
-                <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Fish Type
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -20,7 +20,7 @@ const SearchBar = () => (
                 </div>
             </div>
             <div className="dropdown">
-                <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Class
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -30,7 +30,7 @@ const SearchBar = () => (
                 </div>
             </div>
             <div className="dropdown">
-                <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button className="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Action
                 </button>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
